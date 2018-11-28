@@ -1,0 +1,21 @@
+apiVersion: mflix/v1
+kind: Deployment
+metadata:
+  name: mflix-deployment
+  labels:
+    app: mflix
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mflix
+  template:
+    metadata:
+      labels:
+        app: mflix
+    spec:
+      containers:
+      - name: mflix
+        image: mflix:latest
+        ports:
+        - containerPort: 5000
