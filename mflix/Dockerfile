@@ -2,7 +2,7 @@
 FROM java:8
 
 # port number the container exposes
-EXPOSE 50000
+EXPOSE 90000
 
 # make the jar file available in the container image
 COPY mflix-1.0-SNAPSHOT.jar ./mflix-1.0-SNAPSHOT.jar
