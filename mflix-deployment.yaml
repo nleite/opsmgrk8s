@@ -1,3 +1,14 @@
+apiVersion: mongod.com/v1
+kind: MongoDBReplicaSet
+metadata:
+  name: mdb-local-replicaset
+  namespace: mongodb-local
+spec: Opaque
+  replicas: 3
+  version: 4.0.3
+  project: mdbw-project
+  credentials: om-credentials
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
