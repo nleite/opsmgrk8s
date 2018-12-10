@@ -1,22 +1,12 @@
-apiVersion: mongod.com/v1
-kind: MongoDBReplicaSet
-metadata:
-  name: mdb-local-replicaset
-  namespace: mongodb-local
-spec: Opaque
-  replicas: 3
-  version: 4.0.3
-  project: mdbw-project
-  credentials: om-credentials
-
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mflix-deployment
+  name: mflix-java
   labels:
-    app: mflix
+    app: mflix-java
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: mflix
@@ -27,6 +17,6 @@ spec:
     spec:
       containers:
       - name: mflix
-        image: mflix:latest
+        image: nleite/mflix:latest
         ports:
-        - containerPort: 5000
+        - containerPort: 9000
