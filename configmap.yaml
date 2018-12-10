@@ -6,7 +6,7 @@ metadata:
   namespace: mongodb
 data:
   projectName: test
-  orgId: 5bfcb953ff7a255cfa20213b # Optional
+  orgId: xxxxxxxxxxxx # Optional
   # cloud / ops manager baseUrl - in our case this will cloud manager
   baseUrl: https://cloud.mongodb.com
 ...
