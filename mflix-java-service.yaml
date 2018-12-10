@@ -1,0 +1,26 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: mflix-java-service-external
+spec:
+  type: NodePort
+  ports:
+    - name: http
+      port: 9000
+      #nodePort: 30000
+  selector:
+    app: mflix
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: mflix-java-service
+spec:
+  clusterIP: None
+  ports:
+    - name: server
+      port: 9000
+  selector:
+    app: mflix
