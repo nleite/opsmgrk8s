@@ -1,0 +1,17 @@
+---
+apiVersion: mongodb.com/v1
+kind: MongoDbReplicaSet
+metadata:
+  name: mflix-replicaset
+  namespace: mongodb
+spec:
+  members: 3
+  version: 4.0.0
+  service: mflix-service
+  # the project name needs to match the configMap name!
+  project: mflix
+  credentials: om-credentials
+
+  # We are simplifying the deployment by setting this replicaset without any
+  # persitent volumes
+  persistent: false

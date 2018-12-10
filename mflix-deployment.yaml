@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mflix-java
+  labels:
+    app: mflix-java
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mflix
+  template:
+    metadata:
+      labels:
+        app: mflix
+    spec:
+      containers:
+      - name: mflix
+        image: nleite/mflix:latest
+        ports:
+        - containerPort: 9000
